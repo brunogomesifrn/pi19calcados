@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pt">
+
+<head>
+	
+    <title> Cadastro de Produtos </title>
+
+<link href="{% static 'css/estilo_cadastro_produto.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+
+<h1> Cadastro de Produtos </h1>
+
+<a href= "{ % url 'cursos' % }" >
+    <button type="button">CADASTRAR</button>
+</a>
+
+<p> Lista de Produtos: </p>
+
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{form}}
+
+    <p> Código: {{form.codigo}}</p>
+    <p> Produto: {{form.produto}}</p>
+    <p> Estoque: {{form.estoque}}</p>
+    <p> Valor: {{form.valor}}</p>
+    <p> Foto: {{form.foto.label}}</p>
+
+    <button type="submit"> Salvar </button>
+</form>
+
+{% for curso in lista_curso %}
+    <p>{{curso.nome}}
+        <a href= "{ % url 'atualizar' curso.id % }">EDITAR </a>
+        <a href= "{ % url 'deletar' curso.id % }"> DELETAR </a>
+        
+    </p>
+{% empty %}
+
+    <p>Nenhum produto cadastrado</p>
+{% endfor %}
+
+</body>
+</html>
