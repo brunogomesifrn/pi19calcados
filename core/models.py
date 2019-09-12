@@ -5,4 +5,4 @@ class Cursos(models.Model):
 	produto=models.CharField('Produto', max_length=100)
 	estoque=models.IntegerField('Estoque', null=True)
 	valor=models.IntegerField('Valor', null=True)
-	foto=models.ImageField('Foto', upload_to='Cursos/', null=True)
+	foto=models.ImageField('Foto', upload_to='Cursos', null=True)
