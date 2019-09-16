@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+<head>
+	
+<title>Cadastro</title>
+
+
+<link href="{% static 'css/estilo_cadastro_produto.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<h1> Cadastro de Produtos </h1>
+
+
+<form method="post">
+
+	{% csrf_token %}
+
+	{{form}}
+
+	<button type="submit"> Salvar </button>
+
+</form>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Cursos
+from .models import cadastro_produtos
 
 
-class CursosForm(ModelForm):
+class cadastro_produtosForm(ModelForm):
 	class Meta:
-		model = Cursos
-		fields = ['codigo', 'produto', 'estoque', 'valor', 'foto']
+		model = cadastro_produtos
+		fields = ['codigo', 'produto', 'estoque', 'valor']

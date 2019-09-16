@@ -17,9 +17,9 @@
 
 <h1> Cadastro de Produtos </h1>
 
-<a href= "{ % url 'cursos' % }" >
+ <a href= "{ % url 'cadastro_produtos' % }" >
     <button type="button">CADASTRAR</button>
-</a>
+</a> 
 
 <p> Lista de Produtos: </p>
 
@@ -32,20 +32,20 @@
     <p> Produto: {{form.produto}}</p>
     <p> Estoque: {{form.estoque}}</p>
     <p> Valor: {{form.valor}}</p>
-    <p> Foto: {{form.foto.label}}</p>
+    
 
-    <button type="submit"> Salvar </button>
+    <button type="submit"> Cadastrar </button>
 </form>
 
-{% for curso in lista_curso %}
-    <p>{{curso.nome}}
-        <a href= "{ % url 'atualizar' curso.id % }">EDITAR </a>
-        <a href= "{ % url 'deletar' curso.id % }"> DELETAR </a>
+{% for cadastro_produtos in lista_produtos %}
+    <p>{{cadastro_produtos.nome}}
+        <a href= "{ % url 'atualizar' cadastro_produtos.id % }">EDITAR </a>
+        <a href= "{ % url 'deletar' cadastro_produtos.id % }"> DELETAR </a>
         
     </p>
 {% empty %}
 
-    <p>Nenhum produto cadastrado</p>
+ <!--   <p>Nenhum produto cadastrado</p> -->
 {% endfor %}
 
 </body>
