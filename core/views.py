@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 from .models import cadastro_produtos
 from .forms import cadastro_produtosForm
 
@@ -9,6 +10,7 @@ def index(request):
 
 def cadastro(request):
 	return render(request, 'cadastro.html')
+
 
 def login(request):
 	return render(request, 'login.html')
