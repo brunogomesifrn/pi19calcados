@@ -14,9 +14,14 @@ def cadastro(request):
 
 def login(request):
 	return render(request, 'login.html')
+	
 
 def cadastro_usuario(request):
-	return render(request, 'cadastro_usuario.html')
+	cadastro_usuario = cadastro_usuario.objects.all()
+	contexto = {
+		'usuarios': cadastro_usuario
+	}
+	return render(request, 'cadastro_usuario.html', contexto)
 
 def cadastro_produtos(request):
 	cadastro_produtos = cadastro_produtos.objects.all()

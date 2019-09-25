@@ -116,3 +116,5 @@ STATIC_DIRS = [
     'estaticos',
 
 ]
+
+LOGIN_REDIRECT_URL='/'
