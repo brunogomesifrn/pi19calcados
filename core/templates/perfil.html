@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+
+<h1>Página de Perfil</h1>
+<h2>Olá {{ user.username }}</h2>
+
+<p><a href="{% url 'cadastrouser' %}"> Meus Dados </p></a>
+<p><a href="{% url 'cadastro_produtos' %}"> Cadastrar Produto </p></a>
+<p><a href="{% url 'logout' %}">Logout</p></a>
+
+</body>
+</html>

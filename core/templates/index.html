@@ -63,16 +63,17 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
+          {% if not user.is_authenticated %}
             <a class="nav-link" href="{% url 'login' %}"><span style="font-family: chaucer"> <font size="4"> Login <span class="sr-only"> (current)</font></a>
+          {% endif %}
           </li>
 
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="font-family: chaucer"><font size="4"> Formas de Pagamento </font></a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="property-single.html"><span style="font-family: chaucer"><font size="3">Boleto</font></a>
-              <a class="dropdown-item" href="blog-single.html"><span style="font-family: chaucer"><font size="3">Cartão</font></a>
-      </div>
+          <li class="nav-item">
+            {% if user.is_authenticated %} 
+            <a class="nav-link" href="{% url 'perfil' %}"><span style="font-family: chaucer"><font size="4"> Perfil <span class="sr-only"> (current) </font></a>
+            {% endif %}
+          </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="font-family: chaucer"><font size="4"> Redes Sociais </font></a>
@@ -100,7 +101,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <div class="row">
       <div class="col-lg-12">
-
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -130,12 +130,12 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
       </div>
     </div>
-
      <br/>
      <br/>
      <br/>
      <br/>
       <section id="boxes" class="home-section paddingtop-80">
+
 
       <span style="font-family: chaucer"> <font size="5"><center> <b> OS MELHORES PREÇOS VOCÊ ENCONTRA AQUI </b></center></font> <br />
         <br/>
@@ -503,6 +503,32 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <br/> 
     <br/> 
   
+
+<footer class="footer text-center">
+    <div class="footer-top">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 text-center">
+          <div class="widget">
+            <h4 class="widget-title">Calçados da Dih</h4>
+            <address>Barra do Cunhaú<br>Canguaretama/RN, 59190000</address>
+            <div class="social-list">
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </div>
+            <p class="copyright clear-float">
+              © Calçados da Dih. Todos os direitos reservados
+              <div class="credits">
+                Desenvolvimento: </br><a href="https://www.instagram.com/avyllaaa/">Avylla Souza</a> </br>
+                 <a href="https://www.instagram.com/laura_cristina23/">Laura Cristina</a>
+               
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 
 
 </body>

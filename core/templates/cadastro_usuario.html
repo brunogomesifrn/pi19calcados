@@ -7,116 +7,75 @@
 <head>
 	<title> Cadastro de Usuário </title>
 
-<link href="{% static 'css/estilo_cadastro_usuario.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/estilo_login.css' %}" rel="stylesheet" type="text/css">
 
 
 </head>
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-<body>
+ <body>
 
-<form action="#" method="post"></form>
-
-<form action="#" method="post">
-    <fieldset>
-        <fieldset class="grupo">
-            <div class="campo">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" style="width: 10em" value="">
+    <div id="cadastro_usuario">
+        <h3 class="text-center text-white pt-5">Cadastre-se</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="{% url 'cadastrouser' %}" method="post">
+                            {% csrf_token %}
+                            <h3 class="text-center text-info">Cadastre-se</h3>
+                            
+                            {{form1.as_table}}
+                            {{form2.as_table}}
+                       
+                            <div id="register-link" class="text-right">
+                                
+                               <center><input type="submit"  value="Enviar" class="btn btn-info btn-md" value="Enviar"></a></center>
+                            </div>
+                        </br>
+                    </br>
+                            <div id="register-link" class="text-right">
+                                
+                            </div> 
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="campo">
-                <label for="snome">Sobrenome</label>
-                <input type="text" id="snome" name="snome" style="width: 10em" value="">
-            </div>
-    </fieldset>
-
-     <!--   <div class="campo">
-            <label>Sexo</label>
-            <label>
-                <input type="radio" name="sexo" value="masculino"> Masculino
-            </label>
-            <label>
-                <input type="radio" name="sexo" value="feminino"> Feminino
-            </label>
-        </div> -->
-        <div class="campo">
-            <label for="email">E-mail</label>
-            <input type="text" id="email" name="email" style="width: 20em" value="">
         </div>
-        <div class="campo">
-            <label for="telefone">Telefone</label>
-            <input type="text" id="telefone" name="telefone" style="width: 10em" value="">
-        </div>
+    </div>
 
-     <!--   <fieldset class="grupo">
-            <div class="campo">
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" name="cidade" style="width: 10em" value="">
-            </div>
-            <div class="campo">
-                <label for="estado">Estado</label>
-                <select name="estado" id="estado">
-                    <option value="">--</option>
-                     <option value="PR">AC</option>
-                     <option value="PR">AL</option>
-                     <option value="PR">AP</option>
-                     <option value="PR">AM</option>
-                     <option value="PR">BA</option>
-                     <option value="PR">CE</option>
-                     <option value="PR">DF</option>
-                     <option value="PR">ES</option>
-                     <option value="PR">GO</option>
-                     <option value="PR">MA</option>
-                     <option value="PR">MT</option>
-                     <option value="PR">MS</option>
-                     <option value="PR">MG</option>
-                     <option value="PR">PA</option>
-                     <option value="PR">PB</option>
-                     <option value="PR">PR</option>
-                     <option value="PR">PE</option>
-                     <option value="PR">PI</option>
-                     <option value="PR">RJ</option>
-                     <option value="PR">RN</option>
-                     <option value="PR">RS</option>
-                     <option value="PR">RO</option>
-                     <option value="PR">RR</option>
-                     <option value="PR">SC</option>
-                     <option value="PR">SP</option>
-                     <option value="PR">SE</option>
-                     <option value="PR">TO</option>
-                        
-                </select>
-            </div>
-        </fieldset> -->
+     <br/>
+      <br/>
+       <br/>
+        <br/>
+</body> -->
 
-        <div class="campo">
-                <label for="snome">Senha</label>
-                <input type="text" id="snome" name="snome" style="width: 10em" value="">
-            </div>
+<!-- <body>
 
-                  <div class="campo">
-                <label for="snome">Confirmar Senha</label>
-                <input type="text" id="snome" name="snome" style="width: 10em" value="">
-            </div>
+<h1> Cadastro de Usuario </h1>
 
 
-   <!--     <div class="campo">
-            <label for="mensagem">Mensagem</label>
-            <textarea rows="6" style="width: 20em" id="mensagem" name="mensagem"></textarea>
-        </div> -->
+<p> Lista de Usuarios: </p>
 
-        <div class="campo">
-           <!-- <label>Newsletter</label> -->
-            <label>
-                <input type="checkbox" name="newsletter" value="1"> Gostaria de receber promoções
-            </label>
-        </div>
+<form method="post" enctype="multipart/form-data">
 
-        <button type="submit" name="submit">Enviar</button>
-    </fieldset>
-</form>
+    {% csrf_token %}
+    
 
+    <p> Nome: {{form.nome}}</p>
+    <p> Sobrenome: {{form.sobrenome}}</p>
+    <p> Email: {{form.email}}</p>
+    <p> Telefone: {{form.telefone}}</p>
+    <p> Senha: {{form.senha}}</p>
+    <p> Confirmar Senha: {{form.confirmarsenha}}</p>
+    
 
+    <button type="submit"> Cadastrar </button>
+</form> 
 
-</body>
-</html>
+</body> -->
+ </html>
